@@ -1,0 +1,31 @@
+
+
+#folders
+/Data/*
+/Raw
+# /Processed/*
+/Features/*
+/Merged/*
+
+# #Exclude
+# !Processed/H1
+# # !Processed/H3
+# !Processed/C1
+# !Processed/F1
+# !Processed/R1
+# !Processed/A1
+
+
+!/Data/.gitkeep
+!/Data/README.md
+# !/Features/.gitkeep
+!/Merged/.gitkeep
+
+# files and temp folders
+/**/__pycache__
+/**/.ipynb_checkpoints
+.DS_Store
+/**/.DS_Store
+/**/.vscode
+/**/*.pickle
+/**/*.ipynb

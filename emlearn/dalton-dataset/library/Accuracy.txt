@@ -1,0 +1,5 @@
+Accuracy for decision_tree: 0.9664729548502459
+Accuracy for random_forest: 0.9722843093428699
+Accuracy for extra_trees: 0.9718372820742065
+Accuracy for gaussian_naive_bayes: 0.42378185069289226
+Accuracy for sklearn_mlp: 0.9754135002235136

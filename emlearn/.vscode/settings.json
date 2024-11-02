@@ -1,0 +1,5 @@
+{
+    "files.associations": {
+        "sklearn_mlp_model.h": "c"
+    }
+}
