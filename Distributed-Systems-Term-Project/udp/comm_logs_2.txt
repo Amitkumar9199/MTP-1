@@ -1,0 +1,10 @@
+[ 192.168.137.248:10000 ]: {'id': 'esp1', 'state': 'fire', 'time': 1}
+[ 192.168.137.1:10000 ]: {'id': 'cpu1', 'state': 'not fire', 'time': 0}
+[ 192.168.137.248:10000 ]: {'id': 'esp1', 'state': 'fire', 'time': 2}
+[ 192.168.137.1:10000 ]: {'id': 'cpu1', 'state': 'not fire', 'time': 1}
+[ 192.168.137.248:10000 ]: {'id': 'esp1', 'state': 'fire', 'time': 3}
+[ 192.168.137.1:10000 ]: {'id': 'cpu1', 'state': 'fire', 'time': 2}
+[ 192.168.137.248:10000 ]: {'id': 'esp1', 'state': 'not fire', 'time': 4}
+[ 192.168.137.1:10000 ]: {'id': 'cpu1', 'state': 'not fire', 'time': 3}
+[ 192.168.137.248:10000 ]: {'id': 'esp1', 'state': 'not fire', 'time': 5}
+[ 192.168.137.1:10000 ]: {'id': 'cpu1', 'state': 'fire', 'time': 4}

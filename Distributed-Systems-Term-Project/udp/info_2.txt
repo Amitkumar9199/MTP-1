@@ -1,0 +1,14 @@
+{
+    "esp1": [
+        "not fire",
+        5
+    ],
+    "cpu1": [
+        "fire",
+        4
+    ],
+    "cpu2": [
+        "not fire",
+        4
+    ]
+}

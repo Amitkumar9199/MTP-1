@@ -1,0 +1,24 @@
+python admin.py
+
+.\file_monitor.ps1 info_1.txt
+.\file_monitor.ps1 info_2.txt
+
+Clear-Host; Get-Content comm_logs_1.txt -Wait
+Clear-Host; Get-Content comm_logs_2.txt -Wait
+
+python udp1.py > nul
+python udp2.py > nul
+
+while ($true) {
+    Start-Sleep -Seconds 1
+    $data = curl -q -X GET "http://192.168.137.248/info" 2> nul
+    Clear-Host
+    $data | ConvertFrom-Json | ConvertTo-Json
+}
+
+while ($true) {
+    Start-Sleep -Seconds 1
+    $data = curl -q -X GET "http://192.168.137.248/comms" 2> nul
+    Clear-Host
+    $data
+}
