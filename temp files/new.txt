@@ -1,0 +1,80 @@
+
+format here is timestamp -> message 
+You should write like node ip-> msg.
+use latex:
+ example:
+ \begin{lstlisting}[language=python]
+ node ip -> msg
+\end{lstlisting}
+
+
+--------------case 1-------------------this is messages from from of them node--- you need to write for all using logic as written down.----
+
+Aslo, write seprately what extra elemests ebing added or deleted form each ste. So,, that it is clear to the readr.
+Also, give a name to this case accordinglt what's properties being tested being done.
+-----------------
+Add 33:     (192.168.0.103)
+    (192.168.0.103) will do a Broadcasting msg -> {"add_set":[["2117599665",33]],"rem_set":[]}
+    
+    others will have :
+     -> Received msg: {"add_set":[["2117599665",33]],"rem_set":[]}
+
+Add 44(192.168.0.104),55(192.168.0.105),66(192.168.0.106):
+    Respective ndes will Broadcast msg:(use logic to determine what wiuld be the msg)
+
+    Then finally everyone will recive this:
+    -> Received msg: {"add_set":[["1796048333",66],["2117599665",33],["5138773642",55],["996384795",44]],"rem_set":[]}
+
+print: 
+    All nodes show same add and rem set in received msg. -> print this showing msg as shown above for each ip
+    main_set for each one of them is : [["1796048333",66],["2117599665",33],["5138773642",55],["996384795",44]]
+
+
+rem 33:(192.168.0.106)
+    node (192.168.0.106) will make a broadcast msg :
+    13:33:57.286 -> Received msg: {"add_set":[["1796048333",66],["2117599665",33],["5138773642",55],["996384795",44]],"rem_set":[["2117599665",33]]}
+
+    Others will have a recieve msg and will update the mainset accordingly.
+
+    -> Received msg: {"add_set":[["1796048333",66],["2117599665",33],["5138773642",55],["996384795",44]],"rem_set":[["2117599665",33]]}
+
+print:
+    All nodes show same add and rem set in received msg. -> print this showing msg as shown above for each ip
+    main_set for each one of them is : [["1796048333",66],["5138773642",55],["996384795",44]]
+
+
+add 33:(192.168.0.106)
+    node (192.168.0.106) will broadcast  {"add_set":[["1796048333",66],["2117599665",33],["5138773642",55],["6069681432",33],["996384795",44]],"rem_set":[["2117599665",33]]}
+    
+    
+    Finally we see that all will have this msg except node 192.168.0.103:
+    -> Received msg: {"add_set":[["1796048333",66],["2117599665",33],["5138773642",55],["6069681432",33],["996384795",44]],"rem_set":[["2117599665",33]]}
+
+    All got updated with new 33 execpet 192.168.0.103 so,
+
+add 33:(192.168.0.103) (wasn't updated with new "33" in previous step)
+     it will broadcast: its own new element ["3390855067",33]
+     Then will All finally ahve :
+     
+     
+     Received msg: {"add_set":[["1796048333",66],["2117599665",33],["3390855067",33],["5138773642",55],["6069681432",33],["996384795",44]],"rem_set":[["2117599665",33]]}
+
+
+Finally All got updated to :
+    13:34:45.157 -> Broadcasting data- {"add_set":[["1796048333",66],["2117599665",33],["3390855067",33],["5138773642",55],["6069681432",33],["996384795",44]],"rem_set":[["2117599665",33]]}
+    13:34:45.800 -> Received msg: {"add_set":[["1796048333",66],["2117599665",33],["3390855067",33],["5138773642",55],["6069681432",33],["996384795",44]],"rem_set":[["2117599665",33]]}
+    
+    main set : [["1796048333",66],["3390855067",33],["5138773642",55],["6069681432",33],["996384795",44]]
+
+
+
+rem 33 : (192.168.0.105)
+    this node will broadcast the two extra 33 in rem set: ["3390855067",33],["6069681432",33]
+    13:34:45.157 -> Broadcasting data- {"add_set":[["1796048333",66],["2117599665",33],["5138773642",55],["6069681432",33],["996384795",44]],"rem_set":[["2117599665",33],["6069681432",33],["3390855067",33]]}
+ 
+    Finally All will ahve the same receiove msg and will update the main set:
+    13:34:46.900 -> Received msg: {"add_set":[["1796048333",66],["2117599665",33],["5138773642",55],["6069681432",33],["996384795",44]],"rem_set":[["2117599665",33],["6069681432",33],["3390855067",33]]}
+
+print:
+    main set after this 
+    [["1796048333",66],["5138773642",55],["996384795",44]]
